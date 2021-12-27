@@ -26,18 +26,22 @@ public class AList<Item> {
         size += 1;
     }
 
+    /** return the last element in the array*/
     public Item getLast() {
         return items[size - 1];
     }
 
+    /**return the i th element from the array*/
     public Item get(int i) {
         return items[i];
     }
 
+    /** return the size of the array*/
     public int size() {
         return size;
     }
 
+    /**remove the last elements from the Item array*/
     public Item removeLast() {
         Item x = getLast();
         size = size - 1;
