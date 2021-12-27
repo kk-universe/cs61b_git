@@ -1,36 +1,36 @@
 import java.sql.SQLSyntaxErrorException;
 
-public class AList {
+public class AList<Item> {
 
-    private int[] items;
+    private Item[] items;
     private int size;
 
     public AList() {
-        items = new int[100];
+        items = (Item[]) new Obejct[100];
         size = 0;
     }
 
     /** Resizes the underlying array to the target capacity*/
     public void resize(int capacity) {
-            int[] a = new int[capacity];
+            Item[] a = (Item[]) new Object[capacity];
             System.arraycopy(items, 0, a, 0, size);
             items  = a;
     }
 
     /** Insert x into the back of the list*/
-    public void addLast(int x) {
+    public void addLast(Item x) {
         if (size == items.length) {
-            this.resize(size + 1);
+            this.resize(size * 2);
         }
         items[size] = x;
         size += 1;
     }
 
-    public int getLast() {
+    public Item getLast() {
         return items[size - 1];
     }
 
-    public int get(int i) {
+    public Item get(int i) {
         return items[i];
     }
 
@@ -38,8 +38,8 @@ public class AList {
         return size;
     }
 
-    public int removeLast() {
-        int x = getLast();
+    public Item removeLast() {
+        Item x = getLast();
         size = size - 1;
         return x;
     }
