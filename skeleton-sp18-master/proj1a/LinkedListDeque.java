@@ -101,9 +101,15 @@ public class LinkedListDeque<T> {
     }
 
 
+    public LinkedListDeque(LinkedListDeque other) {
+        sentinel = new ListNode(null,null,null);
+        sentinel.prev = sentinel;
+        sentinel.next = sentinel;
+        size = 0;
 
-
-
-
+        for (int i = 0; i < other.size(); i++ ){
+            addLast((T)other.get(i));
+        }
+    }
 
 }

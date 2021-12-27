@@ -44,6 +44,7 @@ public class AList<Item> {
     /**remove the last elements from the Item array*/
     public Item removeLast() {
         Item x = getLast();
+        items[size - 1] = null;
         size = size - 1;
         return x;
     }
