@@ -1,4 +1,4 @@
-import java.util.List;
+
 
 public class LinkedListDeque<T> {
     private class ListNode {
@@ -19,7 +19,7 @@ public class LinkedListDeque<T> {
 
     //the front node is "null"
     public LinkedListDeque() {
-        sentinel = new ListNode(null,null,null);
+        sentinel = new ListNode(null, null, null);
         sentinel.prev = sentinel;
         sentinel.next = sentinel;
         size = 0;
@@ -29,7 +29,7 @@ public class LinkedListDeque<T> {
         return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
@@ -37,7 +37,7 @@ public class LinkedListDeque<T> {
     /*
     add an item to the front of the linked list
      */
-    public void addFirst(T x){
+    public void addFirst(T x) {
         size += 1;
         ListNode temp = new ListNode(x, sentinel, sentinel.next);
         sentinel.next.prev = temp;
@@ -62,7 +62,7 @@ public class LinkedListDeque<T> {
     }
 
     public T removeLast() {
-        size = (size == 0) ? 0 : size -1;
+        size = (size == 0) ? 0 : size - 1;
         ListNode temp = sentinel.prev;
         sentinel.prev = temp.prev;
         temp.prev.next = sentinel;
@@ -70,7 +70,7 @@ public class LinkedListDeque<T> {
     }
 
     public T get(int index) {
-        if(index >= size) {
+        if (index >= size) {
             return null;
         }
         ListNode pointer = sentinel.next;
@@ -102,14 +102,16 @@ public class LinkedListDeque<T> {
 
 
     public LinkedListDeque(LinkedListDeque other) {
-        sentinel = new ListNode(null,null,null);
+        sentinel = new ListNode(null, null, null);
         sentinel.prev = sentinel;
         sentinel.next = sentinel;
         size = 0;
 
-        for (int i = 0; i < other.size(); i++ ){
-            addLast((T)other.get(i));
+        for (int i = 0; i < other.size(); i++) {
+            addLast((T) other.get(i));
         }
     }
+
+
 
 }

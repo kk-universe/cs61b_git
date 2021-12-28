@@ -1,3 +1,5 @@
+package Intlist;
+
 import java.util.Formatter;
 
 /**
@@ -82,7 +84,13 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList pointer;
+        pointer = A.rest;
+        while (pointer.rest != null) {
+            pointer = pointer.rest;
+        }
+        pointer.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +99,16 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList pointer = new IntList(A.first, null);
+        IntList ptr = pointer;
+        A = A.rest;
+        while (A != null) {
+            ptr.rest = new IntList(A.first,null);
+            A = A.rest;
+            ptr = ptr.rest;
+        }
+        ptr.rest = B;
+        return pointer;
     }
 
 
