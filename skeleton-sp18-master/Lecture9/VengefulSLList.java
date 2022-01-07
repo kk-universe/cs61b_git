@@ -1,6 +1,11 @@
 public class VengefulSLList<Blorp> extends SLList<Blorp> {
     private SLList<Blorp> deletedItems;
 
+    public VengefulSLList(Blorp x) {
+        super(x);
+        deletedItems = new SLList<Blorp>();
+    }
+
     public VengefulSLList() {
         deletedItems = new SLList<>();
     }
