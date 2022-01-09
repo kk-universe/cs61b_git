@@ -3,7 +3,7 @@ public class Palindrome {
         LinkedListDeque<Character> deque = new LinkedListDeque<>();
         for (int i = 0; i < word.length(); i++) {
             char charAti = word.charAt(i);
-            deque.
+
         }
 
     }
